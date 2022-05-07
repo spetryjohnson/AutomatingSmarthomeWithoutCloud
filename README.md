@@ -57,7 +57,7 @@ I've also had decent luck with Zooz products, not counting the occasional need t
 
 I got all of my Raspberry Pi, sensors, and electronics stuff from [Adafruit](https://www.adafruit.com/). Great selection, fast shipping, awesome support and documentation.
 
-### Flio.io ###
+### Flic.io ###
 
 The [Flic 2 Starter Kit](https://flic.io/shop/flic2-starter-kit) is a little expensive, but once you have the hub you can add many more buttons to it. I have these buttons all over my house at this point!
 
