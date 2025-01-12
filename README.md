@@ -1,4 +1,4 @@
-# Automating Your Smarthome Without the Cloud
+# Home Automation Without The Cloud
 
 I've loved the idea of a smart home for years. When COVID hit, and I found myself in desperate need of a hobby to stay busy, I decided to dive headfirst into home automation. Soon after I realized how much depending on cloud services sucks, and I resolved to run everything in my home locally, with no dependency on anyone else's computers anywhere else on the internet.
 
@@ -10,7 +10,7 @@ The first thing you should do, if you haven't seen it, is check out the presenta
 
 The rest of this README is supporting information geared to people that have already seen (or read) the talk.
 
-## Devices and integrations that I like
+## Devices that I like
 
 ### Inovelli ###
 
@@ -54,11 +54,32 @@ The switches I replaced were controlling lights, so I just wired those lights to
 
 I got all of my Raspberry Pi, sensors, and electronics stuff from [Adafruit](https://www.adafruit.com/). Great selection, fast shipping, awesome support and documentation.
 
-### Presence Detection ###
+## Presence Detection ##
 
-There are two different systems that use BLE tracking to determine which rooms people are in. I used [ESPresence](https://espresense.com/) first and it was pretty solid, but it required dedicating an entire ESP32 to presence detection.  They aren't terribly expensive, but there are a few places where I would have liked to have been able to add another sensor or something to that device.
+Many of my automations need to know which rooms are occupied and which are not.
+
+There are a few different ways to do this:
+
+- **Motion sensors** are great at detecting when people walk into a room, but not great at detecting if people are sitting still
+- **mmWave sensors** are super sensitive and can detect micro movements, such as a person breathing, but can suffer from false positives
+- **Bluetooth beacons** track a device's distance from a Bluetooth transmitter by monitoring the signal strength, but don't work if people don't carry their phones on their person at all times
+
+I currently use these things in combination with each other, but it's still a work in progress. 
+
+I originally used [ESPresence](https://espresense.com/) for BLE beacon tracking and it was pretty solid, but it required dedicating an entire ESP32 to presence detection.  They aren't terribly expensive, but there are a few places where I would have liked to have been able to add another sensor or something to that device.
 
 I'm currently experimenting with [Bermuda](https://github.com/agittins/bermuda) which uses the BLE Proxy component of ESPHome for tracking, which allows you to add other sensors and components through ESPHome as well.
+
+## Local voice control ##
+
+Voice control has come a long way since I started using Home Assistant.
+
+It's still not ready for prime time use, but it's getting close.
+
+- [$13 voice assistant](https://www.home-assistant.io/voice_control/thirteen-usd-voice-remote/)
+- [DIY voice assistant with Respeaker Lite](https://smarthomecircle.com/local-voice-assistant-with-seeed-studio-respeaker-lite)
+- [ESP32-S3-BOX voice assistant](https://www.home-assistant.io/voice_control/s3_box_voice_assistant/)
+- [Home Assistant Voice Preview Edition](https://www.home-assistant.io/voice-pe/)
 
 ## DIY hackjobs ##
 
